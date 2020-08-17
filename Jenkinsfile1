@@ -20,6 +20,12 @@ pipeline {
 	            }
 	        }
 	
+	       stage ('Dummy Stage') {
+	
+	            steps {
+	                echo "this is Dummmy stage"
+	            }
+	        }
 	
 	        stage ('Deployment Stage') {
 	            steps {
