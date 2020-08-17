@@ -20,10 +20,18 @@ pipeline {
 	            }
 	        }
 	
-	       stage ('Dummy Stage') {
+	       stage ('Dummy Stage1') {
 	
 	            steps {
 	                echo "this is Dummmy stage"
+	            }
+	        }
+		
+		
+		stage ('Dummy Stage2') {
+	
+	            steps {
+	                echo "this is Dummmy stage2"
 	            }
 	        }
 	
