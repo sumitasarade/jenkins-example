@@ -1,48 +1,28 @@
 pipeline {
-	    agent any
+	agent any
 	
-	    stages {
-	        stage ('Compile Stage') {
-	
-	            steps {
-	                withMaven(maven: 'maven') {
-	                    sh 'mvn clean compile'
-	                }
-	            }
-	        }
-	
-	        stage ('Testing Stage') {
-	
-	            steps {
-	                withMaven(maven: 'maven') {
-	                    sh 'mvn test'
-	                }
-	            }
-	        }
-	
-	       stage ('Dummy Stage1') {
-	
-	            steps {
-	                echo "this is Dummmy stage"
-	            }
-	        }
-		
-		
-		stage ('Dummy Stage2') {
-	
-	            steps {
-	                echo "this is Dummmy stage2"
-	            }
-	        }
-	
-	        stage ('Deployment Stage') {
-	            steps {
-	                withMaven(maven: 'maven') {
-	                    //sh 'mvn deploy'
-			    echo 'deploying'
-	                }
-	            }
-	        }
-	    }
+	stages {
+		stage {
+			step('Compile stage'){
+				steps{
+					withMaven(maven: 'MAVEN_HOME'){
+						sh 'mvn clean compile'
+					}
+				}
+			}
+			
+			stage('Testing Stage'){
+				steps{
+					withMaven(maven: 'MAVEN_HOME'){
+						sh 'mvn test'
+					}
+				}
+			}
+			
+			stage('Dummy Stage'){
+				steps{
+					echo 'Dummy Stage'
+				}
+			}
 	}
-
+}
