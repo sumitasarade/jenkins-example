@@ -2,7 +2,6 @@ pipeline {
 	agent any
 	
 	stages {
-		stage {
 			stage('Compile stage'){
 				steps{
 					withMaven(maven: 'MAVEN_HOME'){
@@ -24,6 +23,5 @@ pipeline {
 					echo 'Dummy Stage'
 				}
 			}
-		}
 	}
 }
