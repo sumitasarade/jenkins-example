@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage('Clone Repo'){
 			steps('Cloning Repo'){
-				git 'https://github.com/sumitasarade/maven-project.git'
+				git 'https://github.com/sumitasarade/jenkins-example.git'
 			}
 		}
 		stage('Compile'){
